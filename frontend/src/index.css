@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Fauna+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Cinzel", serif;
+  font-family: "Fauna One", serif;
+}
+
+.app {
+  margin: auto;
+}
