@@ -8,6 +8,9 @@ import {
   useLocation,
 } from "react-router-dom";
 
+import Home from "./scenes/home/Home";
+
+// start every page from the top
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -21,7 +24,12 @@ const ScrollToTop = () => {
 function App() {
   return (
     <div className="app">
-      <h1>hello</h1>
+      <Router>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
