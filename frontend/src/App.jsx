@@ -9,6 +9,9 @@ import {
 } from "react-router-dom";
 
 import Home from "./scenes/home/Home";
+import ItemDetails from "./scenes/itemDetails/ItemDetails.jsx";
+import Checkout from "./scenes/checkout/Checkout.jsx";
+import Confirmation from "./scenes/checkout/Confirmation.jsx";
 
 // start every page from the top
 const ScrollToTop = () => {
@@ -27,7 +30,10 @@ function App() {
       <Router>
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="item/:itemId" element={<ItemDetails />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="checkout/success" element={<Confirmation />} />
         </Routes>
       </Router>
     </div>
