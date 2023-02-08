@@ -12,6 +12,7 @@ import Home from "./scenes/home/Home";
 import ItemDetails from "./scenes/itemDetails/ItemDetails.jsx";
 import Checkout from "./scenes/checkout/Checkout.jsx";
 import Confirmation from "./scenes/checkout/Confirmation.jsx";
+import CartMenu from "./scenes/global/CartMenu.jsx";
 
 // start every page from the top
 const ScrollToTop = () => {
@@ -35,6 +36,7 @@ function App() {
           <Route path="checkout" element={<Checkout />} />
           <Route path="checkout/success" element={<Confirmation />} />
         </Routes>
+        <CartMenu />
       </Router>
     </div>
   );
