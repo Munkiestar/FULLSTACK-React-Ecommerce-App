@@ -1,10 +1,8 @@
-import React from "react";
-import Navbar from "../global/Navbar.jsx";
-
+import MainCarousel from "./MainCarousel";
 const Home = () => {
   return (
-    <div>
-      <Navbar />
+    <div className="home">
+      <MainCarousel />
     </div>
   );
 };

@@ -13,6 +13,7 @@ import ItemDetails from "./scenes/itemDetails/ItemDetails.jsx";
 import Checkout from "./scenes/checkout/Checkout.jsx";
 import Confirmation from "./scenes/checkout/Confirmation.jsx";
 import CartMenu from "./scenes/global/CartMenu.jsx";
+import Navbar from "./scenes/global/Navbar.jsx";
 
 // start every page from the top
 const ScrollToTop = () => {
@@ -29,6 +30,7 @@ function App() {
   return (
     <div className="app">
       <Router>
+        <Navbar />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
