@@ -1,10 +1,12 @@
-import React from "react";
-import Navbar from "../global/Navbar.jsx";
-
+import MainCarousel from "./MainCarousel";
+import ShoppingList from "./ShoppingList.jsx";
+import Subscribe from "./Subscribe.jsx";
 const Home = () => {
   return (
-    <div>
-      <Navbar />
+    <div className="home">
+      <MainCarousel />
+      <ShoppingList />
+      <Subscribe />
     </div>
   );
 };
