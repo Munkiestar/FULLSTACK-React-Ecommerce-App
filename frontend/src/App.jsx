@@ -14,6 +14,7 @@ import Checkout from "./scenes/checkout/Checkout.jsx";
 import Confirmation from "./scenes/checkout/Confirmation.jsx";
 import CartMenu from "./scenes/global/CartMenu.jsx";
 import Navbar from "./scenes/global/Navbar.jsx";
+import Footer from "./scenes/global/Footer.jsx";
 
 // start every page from the top
 const ScrollToTop = () => {
@@ -39,6 +40,7 @@ function App() {
           <Route path="checkout/success" element={<Confirmation />} />
         </Routes>
         <CartMenu />
+        <Footer />
       </Router>
     </div>
   );
