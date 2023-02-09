@@ -18,8 +18,7 @@ const ItemCard = ({ item, width }) => {
     palette: { neutral },
   } = useTheme();
 
-  const { category, price, name, image } = item.attributes;
-
+  const { category, price, name, image } = item?.attributes;
   const {
     data: {
       attributes: {
@@ -29,7 +28,7 @@ const ItemCard = ({ item, width }) => {
       },
     },
   } = image;
-
+  // console.log("url:", url);
   return (
     <Box width={width}>
       <Box
@@ -38,7 +37,8 @@ const ItemCard = ({ item, width }) => {
         onMouseOut={() => setIsHovered(false)}
       >
         <img
-          src={`http://localhost:1337/${url}`}
+          // src={`http://localhost:1337${image?.data?.attributes?.formats?.medium?.url}`}
+          src={`http://localhost:1337${url}`}
           alt={item.name}
           width="300px"
           height="400px"
@@ -46,7 +46,7 @@ const ItemCard = ({ item, width }) => {
           style={{ cursor: "pointer" }}
         />
         <Box
-          display={isHovered ? "blocked" : "none"}
+          display={isHovered ? "block" : "none"}
           position="absolute"
           bottom="10%"
           left="0"
@@ -54,28 +54,30 @@ const ItemCard = ({ item, width }) => {
           padding="0 5%"
         >
           {/* AMOUNT */}
-          <Box
-            display="flex"
-            alignItems="center"
-            backgroundColor={shades.neutral[100]}
-            borderRadius="3px"
-          >
-            <IconButton onClick={() => setCount(Math.max(count - 1, 1))}>
-              <RemoveIcon />
-            </IconButton>
-            <Typography color={shades.primary[300]}>{count}</Typography>
-            <IconButton onClick={() => setCount(count + 1)}>
-              <AddIcon />
-            </IconButton>
-          </Box>
+          <Box display="flex" justifyContent="space-between">
+            <Box
+              display="flex"
+              alignItems="center"
+              backgroundColor={shades.neutral[100]}
+              borderRadius="3px"
+            >
+              <IconButton onClick={() => setCount(Math.max(count - 1, 1))}>
+                <RemoveIcon />
+              </IconButton>
+              <Typography color={shades.primary[300]}>{count}</Typography>
+              <IconButton onClick={() => setCount(count + 1)}>
+                <AddIcon />
+              </IconButton>
+            </Box>
 
-          {/*  BUTTON  */}
-          <Button
-            onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
-            sx={{ backgroundColor: shades.primary[300], color: "white" }}
-          >
-            Add to Cart
-          </Button>
+            {/*  BUTTON  */}
+            <Button
+              onClick={() => dispatch(addToCart({ item: { ...item, count } }))}
+              sx={{ backgroundColor: shades.primary[300], color: "white" }}
+            >
+              Add to Cart
+            </Button>
+          </Box>
         </Box>
       </Box>
 

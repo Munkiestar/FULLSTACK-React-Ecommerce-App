@@ -18,8 +18,6 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
 
-  console.log("cart: ", cart);
-
   return (
     <Box
       display="flex"
